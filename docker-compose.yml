@@ -1,0 +1,26 @@
+```yaml
+services:
+
+  web:
+    build: ./web
+    container_name: libreria_php
+    ports:
+      - "8081:80"
+    volumes:
+      - ./web:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: libreria_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: libreria
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
+```
+
+```
+```
