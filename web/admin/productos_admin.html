@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Productos · Librería Montan</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo">LM</div>
+      <div><h1>Librería Montan</h1><small>Admin Panel</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="group-label">Principal</div>
+
+      <a href="productos_admin.html">Productos</a>
+
+
+
+      <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Dashboard</a>
+      <div class="group-label">Inventario</div>
+      <a href="productos.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Productos</a>
+      <a href="registrar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Registrar Producto</a>
+      <div class="group-label">Ventas</div>
+      <a href="ventas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 1 1-8 0"/></svg>Registrar Venta</a>
+      <a href="historial.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Historial</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">JM</div>
+      <div class="info"><strong>Jhoana M.</strong><span>Administrador</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="btn-toggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="page-title">Gestión de Productos<small>Administra tu inventario</small></div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-top">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+          <input type="text" placeholder="Buscar..." />
+        </div>
+        <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2h16Z"/><path d="M10 21h4"/></svg><span class="dot"></span></button>
+        <button class="topbar-user"><div class="avatar">JM</div><span>Jhoana</span></button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb">Inicio / <span>Productos</span></div>
+          <h2>Listado de Productos</h2>
+          <p>1,248 productos registrados en el sistema</p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+            Exportar
+          </button>
+          <a href="registrar.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Nuevo Producto
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <div class="input-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+              <input type="text" placeholder="Buscar por nombre, SKU o categoría..." data-search="#tabla-productos" />
+            </div>
+          </div>
+          <div class="toolbar-right">
+            <select class="select" data-filter="#tabla-productos">
+              <option value="">Todas las categorías</option>
+              <option>Novelas</option>
+              <option>Académicos</option>
+              <option>Infantil</option>
+              <option>Papelería</option>
+            </select>
+            <select class="select">
+              <option>Todos los estados</option>
+              <option>Disponible</option>
+              <option>Stock bajo</option>
+              <option>Agotado</option>
+
+
+<form action="../actualizar.php" method="POST"></form>
+
+
+            </select>
+            <button class="btn btn-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+              Filtros
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data" id="tabla-productos">
+            <thead>
+              <tr><th>ID</th><th>Producto</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Estado</th><th style="text-align:right">Acciones</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>#001</td><td><div class="cell-product"><div class="thumb">CA</div><div><div class="name">Cien Años de Soledad</div><div class="sku">SKU-0001</div></div></div></td><td>Novelas</td><td>$28.00</td><td>45</td><td><span class="badge success">Disponible</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon" title="Editar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar este producto?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#002</td><td><div class="cell-product"><div class="thumb">EP</div><div><div class="name">El Principito</div><div class="sku">SKU-0034</div></div></div></td><td>Infantil</td><td>$18.00</td><td>3</td><td><span class="badge warning">Stock bajo</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#003</td><td><div class="cell-product"><div class="thumb">RA</div><div><div class="name">Rayuela</div><div class="sku">SKU-0089</div></div></div></td><td>Novelas</td><td>$32.00</td><td>5</td><td><span class="badge warning">Stock bajo</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#004</td><td><div class="cell-product"><div class="thumb">AU</div><div><div class="name">Atlas Universal</div><div class="sku">SKU-0011</div></div></div></td><td>Académicos</td><td>$45.00</td><td>0</td><td><span class="badge error">Agotado</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#005</td><td><div class="cell-product"><div class="thumb">CU</div><div><div class="name">Cuaderno A4 Pasta Dura</div><div class="sku">SKU-0210</div></div></div></td><td>Papelería</td><td>$6.50</td><td>120</td><td><span class="badge success">Disponible</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#006</td><td><div class="cell-product"><div class="thumb">DL</div><div><div class="name">Diccionario Larousse</div><div class="sku">SKU-0067</div></div></div></td><td>Académicos</td><td>$42.00</td><td>22</td><td><span class="badge success">Disponible</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#007</td><td><div class="cell-product"><div class="thumb">LA</div><div><div class="name">Lápices 2B (12u)</div><div class="sku">SKU-0301</div></div></div></td><td>Papelería</td><td>$8.00</td><td>78</td><td><span class="badge success">Disponible</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+              <tr><td>#008</td><td><div class="cell-product"><div class="thumb">DQ</div><div><div class="name">Don Quijote (Tomo I)</div><div class="sku">SKU-0044</div></div></div></td><td>Novelas</td><td>$38.00</td><td>0</td><td><span class="badge error">Agotado</span></td><td><div class="cell-actions"><a href="editar.html" class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></a><button class="btn-icon danger" data-confirm="¿Eliminar?"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg></button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <div>Mostrando <strong>1-8</strong> de <strong>1,248</strong> productos</div>
+          <div class="pages">
+            <button>‹</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>…</button>
+            <button>156</button>
+            <button>›</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="admin/js/script.js"></script>
+</body>
+</html>

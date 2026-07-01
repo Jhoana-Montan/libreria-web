@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Registrar Venta · Librería Montan</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo">LM</div>
+      <div><h1>Librería Montan</h1><small>Admin Panel</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="group-label">Principal</div>
+
+      <a href="ventas_admin.html">Ventas</a>
+
+
+      <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Dashboard</a>
+      <div class="group-label">Inventario</div>
+      <a href="productos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Productos</a>
+      <a href="registrar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Registrar Producto</a>
+      <div class="group-label">Ventas</div>
+      <a href="ventas.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 1 1-8 0"/></svg>Registrar Venta</a>
+      <a href="historial.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Historial</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">JM</div>
+      <div class="info"><strong>Jhoana M.</strong><span>Administrador</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="btn-toggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="page-title">Punto de Venta<small>Registra una nueva venta</small></div>
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2h16Z"/><path d="M10 21h4"/></svg></button>
+        <button class="topbar-user"><div class="avatar">JM</div><span>Jhoana</span></button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb">Inicio / <span>Registrar Venta</span></div>
+          <h2>Nueva venta</h2>
+          <p>Selecciona el producto y la cantidad para registrar la venta</p>
+        </div>
+        <a href="historial.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          Ver historial
+        </a>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <h3>Datos de la venta<small>Completa los siguientes campos</small></h3>
+          </div>
+          <div class="card-body">
+            <form data-demo="Venta registrada correctamente">
+
+                <form action="../guardar_venta.php" method="POST"></form>
+              
+              <div class="form-grid">
+                <div class="field full">
+                  <label>Producto *</label>
+                  <select id="venta-producto" required>
+                    <option value="">Seleccionar producto...</option>
+                    <option value="Cien Años de Soledad" data-precio="28" data-stock="45" data-cat="Novelas">Cien Años de Soledad</option>
+                    <option value="El Principito" data-precio="18" data-stock="3" data-cat="Infantil">El Principito</option>
+                    <option value="Rayuela" data-precio="32" data-stock="5" data-cat="Novelas">Rayuela</option>
+                    <option value="Diccionario Larousse" data-precio="42" data-stock="22" data-cat="Académicos">Diccionario Larousse</option>
+                    <option value="Cuaderno A4 Pasta Dura" data-precio="6.50" data-stock="120" data-cat="Papelería">Cuaderno A4 Pasta Dura</option>
+                    <option value="Lápices 2B (12u)" data-precio="8" data-stock="78" data-cat="Papelería">Lápices 2B (12u)</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label>Cantidad *</label>
+                  <input type="number" id="venta-cantidad" min="1" value="1" required />
+                </div>
+
+                <div class="field">
+                  <label>Método de pago</label>
+                  <select>
+                    <option>Efectivo</option>
+                    <option>Tarjeta de crédito</option>
+                    <option>Tarjeta de débito</option>
+                    <option>Transferencia</option>
+                  </select>
+                </div>
+
+                <div class="field full">
+                  <label>Cliente (opcional)</label>
+                  <input type="text" placeholder="Nombre del cliente" />
+                </div>
+
+                <div class="field full">
+                  <label>Notas</label>
+                  <textarea rows="3" placeholder="Observaciones de la venta..."></textarea>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <a href="index.html" class="btn btn-outline">Cancelar</a>
+                <button type="submit" class="btn btn-success">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+                  Registrar Venta
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div>
+          <div class="summary">
+            <h3>Resumen de venta</h3>
+            <div class="row"><span>Producto</span><span id="s-nombre">—</span></div>
+            <div class="row"><span>Categoría</span><span id="s-cat">—</span></div>
+            <div class="row"><span>Precio unitario</span><span id="s-precio">$0.00</span></div>
+            <div class="row"><span>Stock disponible</span><span id="s-stock">0</span></div>
+            <div class="row"><span>Cantidad</span><span id="s-cant">0</span></div>
+            <div class="row total"><span>TOTAL</span><span id="s-total">$0.00</span></div>
+          </div>
+
+          <div class="card" style="margin-top:20px">
+            <div class="card-head"><h3>Tips rápidos</h3></div>
+            <div class="card-body" style="font-size:13px;color:var(--gris-700);line-height:1.7">
+              ✓ Verifica el stock antes de confirmar.<br>
+              ✓ Los productos con stock bajo aparecen en amarillo.<br>
+              ✓ El total se calcula automáticamente.<br>
+              ✓ Las ventas se reflejan en el historial al instante.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="admin/js/script.js"></script>
+</body>
+</html>

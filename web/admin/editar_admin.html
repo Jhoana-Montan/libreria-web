@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Editar Producto · Librería Montan</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo">LM</div>
+      <div><h1>Librería Montan</h1><small>Admin Panel</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="group-label">Principal</div>
+      <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Dashboard</a>
+      <div class="group-label">Inventario</div>
+      <a href="productos.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Productos</a>
+      <a href="registrar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Registrar Producto</a>
+      <div class="group-label">Ventas</div>
+      <a href="ventas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 1 1-8 0"/></svg>Registrar Venta</a>
+      <a href="historial.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Historial</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">JM</div>
+      <div class="info"><strong>Jhoana M.</strong><span>Administrador</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="btn-toggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="page-title">Editar Producto<small>Actualiza la información del producto</small></div>
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2h16Z"/><path d="M10 21h4"/></svg></button>
+        <button class="topbar-user"><div class="avatar">JM</div><span>Jhoana</span></button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb">Inicio / Productos / <span>Editar #001</span></div>
+          <h2>Editar producto</h2>
+          <p>Modifica los datos del producto seleccionado</p>
+        </div>
+        <a href="productos.html" class="btn btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+          Volver
+        </a>
+      </div>
+
+      <div class="alert warning">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+        <div><strong>Atención:</strong> Los cambios se aplicarán inmediatamente al inventario.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Información del producto<small>Producto ID #001 · SKU-0001</small></h3>
+          <span class="badge success">Disponible</span>
+        </div>
+        <div class="card-body">
+          <form data-demo="Producto actualizado correctamente">
+            <div class="form-grid">
+              <div class="field full">
+                <label>Nombre del producto *</label>
+                <input type="text" value="Cien Años de Soledad" required />
+              </div>
+
+              <div class="field">
+                <label>Categoría *</label>
+                <select required>
+                  <option>Novelas</option>
+                  <option>Académicos</option>
+                  <option>Infantil</option>
+                  <option>Papelería</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label>SKU / Código</label>
+                <input type="text" value="SKU-0001" />
+              </div>
+
+              <div class="field">
+                <label>Precio *</label>
+                <div class="input-money"><input type="number" step="0.01" value="28.00" required /></div>
+              </div>
+
+              <div class="field">
+                <label>Stock *</label>
+                <input type="number" value="45" required />
+                <div class="hint">Stock actual disponible.</div>
+              </div>
+
+              <div class="field full">
+                <label>Descripción</label>
+                <textarea rows="4">Obra maestra de Gabriel García Márquez, edición conmemorativa de pasta dura.</textarea>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-danger" onclick="if(confirm('¿Eliminar este producto?')) window.location='productos.html'">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                Eliminar
+              </button>
+              <a href="productos.html" class="btn btn-outline">Cancelar</a>
+              <button type="submit" class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+                Actualizar Producto
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="admin/js/script.js"></script>
+
+</body>
+</html>

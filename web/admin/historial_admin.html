@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Historial de Ventas · Librería Montan</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo">LM</div>
+      <div><h1>Librería Montan</h1><small>Admin Panel</small></div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="group-label">Principal</div>
+      <a href="historial_admin.html">Historial</a>
+
+
+      <a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>Dashboard</a>
+      <div class="group-label">Inventario</div>
+      <a href="productos.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Productos</a>
+      <a href="registrar.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>Registrar Producto</a>
+      <div class="group-label">Ventas</div>
+      <a href="ventas.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 1 1-8 0"/></svg>Registrar Venta</a>
+      <a href="historial.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Historial</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">JM</div>
+      <div class="info"><strong>Jhoana M.</strong><span>Administrador</span></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="btn-toggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+        <div class="page-title">Historial de Ventas<small>Registro completo de transacciones</small></div>
+      </div>
+      <div class="topbar-right">
+        <button class="icon-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2h16Z"/><path d="M10 21h4"/></svg></button>
+        <button class="topbar-user"><div class="avatar">JM</div><span>Jhoana</span></button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb">Inicio / <span>Historial</span></div>
+          <h2>Historial de Ventas</h2>
+          <p>Consulta y exporta todas las ventas registradas</p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
+            Exportar PDF
+          </button>
+          <button class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+            Exportar Excel
+          </button>
+        </div>
+      </div>
+
+      <!-- KPI mini -->
+      <div class="kpi-grid">
+        <div class="kpi azul">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-6"/></svg></div>
+          <div class="info"><span>Ventas Hoy</span><strong>24</strong></div>
+        </div>
+        <div class="kpi verde">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg></div>
+          <div class="info"><span>Ingresos Hoy</span><strong>$1,840</strong></div>
+        </div>
+        <div class="kpi morado">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div class="info"><span>Ventas (Mes)</span><strong>312</strong></div>
+        </div>
+        <div class="kpi naranja">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3z"/></svg></div>
+          <div class="info"><span>Ingresos (Mes)</span><strong>$28,450</strong></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="toolbar">
+          <div class="toolbar-left">
+            <div class="input-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+              <input type="text" placeholder="Buscar por producto o ID..." data-search="#tabla-historial" />
+            </div>
+          </div>
+          <div class="toolbar-right">
+            <input type="date" class="select" />
+            <select class="select">
+              <option>Todos los productos</option>
+              <option>Novelas</option>
+              <option>Académicos</option>
+              <option>Papelería</option>
+            </select>
+            <select class="select">
+              <option>Todos los estados</option>
+              <option>Pagado</option>
+              <option>Pendiente</option>
+              <option>Cancelado</option>
+            </select>
+            <button class="btn btn-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M6 12h12M10 18h4"/></svg>
+              Filtros
+            </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="data" id="tabla-historial">
+            <thead>
+              <tr><th>ID</th><th>Producto</th><th>Cantidad</th><th>Total</th><th>Método</th><th>Fecha</th><th>Estado</th><th style="text-align:right">Acciones</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>#1042</strong></td><td><div class="cell-product"><div class="thumb">CA</div><div><div class="name">Cien Años de Soledad</div><div class="sku">SKU-0001</div></div></div></td><td>2</td><td><strong>$56.00</strong></td><td>Efectivo</td><td>30 Jun 2026 · 14:32</td><td><span class="badge success">Pagado</span></td><td><div class="cell-actions"><button class="btn-icon" title="Ver"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="btn-icon" title="Imprimir"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></button></div></td></tr>
+              <tr><td><strong>#1041</strong></td><td><div class="cell-product"><div class="thumb">CU</div><div><div class="name">Cuaderno A4 Pasta Dura</div><div class="sku">SKU-0210</div></div></div></td><td>5</td><td><strong>$32.50</strong></td><td>Tarjeta</td><td>30 Jun 2026 · 12:18</td><td><span class="badge success">Pagado</span></td><td><div class="cell-actions"><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></button></div></td></tr>
+              <tr><td><strong>#1040</strong></td><td><div class="cell-product"><div class="thumb">EP</div><div><div class="name">El Principito</div><div class="sku">SKU-0034</div></div></div></td><td>1</td><td><strong>$18.00</strong></td><td>Transferencia</td><td>29 Jun 2026 · 17:05</td><td><span class="badge warning">Pendiente</span></td><td><div class="cell-actions"><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></button></div></td></tr>
+              <tr><td><strong>#1039</strong></td><td><div class="cell-product"><div class="thumb">DL</div><div><div class="name">Diccionario Larousse</div><div class="sku">SKU-0067</div></div></div></td><td>1</td><td><strong>$42.00</strong></td><td>Efectivo</td><td>29 Jun 2026 · 11:42</td><td><span class="badge success">Pagado</span></td><td><div class="cell-actions"><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></button></div></td></tr>
+              <tr><td><strong>#1038</strong></td><td><div class="cell-product"><div class="thumb">LA</div><div><div class="name">Lápices 2B (12u)</div><div class="sku">SKU-0301</div></div></div></td><td>3</td><td><strong>$24.00</strong></td><td>Tarjeta</td><td>28 Jun 2026 · 16:20</td><td><span class="badge success">Pagado</span></td><td><div class="cell-actions"><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></button></div></td></tr>
+              <tr><td><strong>#1037</strong></td><td><div class="cell-product"><div class="thumb">RA</div><div><div class="name">Rayuela</div><div class="sku">SKU-0089</div></div></div></td><td>1</td><td><strong>$32.00</strong></td><td>Efectivo</td><td>28 Jun 2026 · 10:12</td><td><span class="badge error">Cancelado</span></td><td><div class="cell-actions"><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8Z"/><circle cx="12" cy="12" r="3"/></svg></button><button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></button></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <div>Mostrando <strong>1-6</strong> de <strong>312</strong> ventas</div>
+          <div class="pages">
+            <button>‹</button>
+            <button class="active">1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>…</button>
+            <button>52</button>
+            <button>›</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="admin/js/script.js"></script>
+</body>
+</html>

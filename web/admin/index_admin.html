@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard · Librería Montan</title>
+<link rel="stylesheet" href="css/estilo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo">LM</div>
+      <div>
+        <h1>Librería Montan</h1>
+        <small>Admin Panel</small>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="group-label">Principal</div>
+      
+      < href="productos_admin.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12 12 3l9 9"/><path d="M5 10v10h14V10"/></svg>
+        Dashboard
+      </a>
+      <div class="group-label">Inventario</div>
+      <a href="productos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+        Productos
+      </a>
+      <a href="registrar.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        Registrar Producto
+      </a>
+      <div class="group-label">Ventas</div>
+      <a href="ventas.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 1 1-8 0"/></svg>
+        Registrar Venta
+      </a>
+      <a href="historial.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        Historial
+      </a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">JM</div>
+      <div class="info">
+        <strong>Jhoana M.</strong>
+        <span>Administrador</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="btn-toggle" aria-label="Menú">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="page-title">Panel principal<small>Bienvenida de nuevo, Jhoana</small></div>
+      </div>
+      <div class="topbar-right">
+        <div class="search-top">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+          <input type="text" placeholder="Buscar productos, ventas..." />
+        </div>
+        <button class="icon-btn" title="Notificaciones">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 1 0-12 0v5l-2 2h16Z"/><path d="M10 21h4"/></svg>
+          <span class="dot"></span>
+        </button>
+        <button class="icon-btn" title="Ajustes">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1A2 2 0 1 1 4.4 17l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1A2 2 0 1 1 7 4.4l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1A2 2 0 1 1 19.6 7l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>
+        </button>
+        <button class="topbar-user">
+          <div class="avatar">JM</div>
+          <span>Jhoana</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="page-header">
+        <div>
+          <div class="breadcrumb">Inicio / <span>Dashboard</span></div>
+          <h2>Resumen general</h2>
+          <p>Indicadores clave de tu librería en tiempo real</p>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-outline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+            Exportar
+          </button>
+          <a href="ventas.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+            Nueva Venta
+          </a>
+        </div>
+      </div>
+
+      <!-- KPI CARDS -->
+      <div class="kpi-grid">
+        <div class="kpi azul">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18v13H3zM8 7V4h8v3"/></svg></div>
+          <div class="info">
+            <span>Total Productos</span>
+            <strong>1,248</strong>
+            <span class="trend up">▲ 4.2% este mes</span>
+          </div>
+        </div>
+        <div class="kpi verde">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7 12 3 4 7v10l8 4 8-4Z"/><path d="m4 7 8 4 8-4M12 11v10"/></svg></div>
+          <div class="info">
+            <span>Stock Total</span>
+            <strong>9,432</strong>
+            <span class="trend up">▲ 2.8% vs ayer</span>
+          </div>
+        </div>
+        <div class="kpi morado">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6"/></svg></div>
+          <div class="info">
+            <span>Valor Inventario</span>
+            <strong>$84,210</strong>
+            <span class="trend up">▲ 6.1% este mes</span>
+          </div>
+        </div>
+        <div class="kpi naranja">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m7 14 4-4 4 4 5-6"/></svg></div>
+          <div class="info">
+            <span>Ventas (Mes)</span>
+            <strong>312</strong>
+            <span class="trend down">▼ 1.2% vs mes anterior</span>
+          </div>
+        </div>
+        <div class="kpi rojo">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div>
+          <div class="info">
+            <span>Ingresos (Mes)</span>
+            <strong>$28,450</strong>
+            <span class="trend up">▲ 8.4%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHARTS -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <h3>Ventas mensuales<small>Comparativa anual de ingresos</small></h3>
+            <div class="actions">
+              <button class="btn btn-sm btn-outline">Semana</button>
+              <button class="btn btn-sm btn-primary">Mes</button>
+              <button class="btn btn-sm btn-outline">Año</button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart-wrap"><canvas id="chart-ventas"></canvas></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <h3>Inventario por categoría<small>Distribución actual</small></h3>
+          </div>
+          <div class="card-body">
+            <div class="chart-wrap sm"><canvas id="chart-inventario"></canvas></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIVIDAD + VENTAS RECIENTES -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <h3>Últimas ventas<small>10 transacciones más recientes</small></h3>
+            <a href="historial.html" class="btn btn-sm btn-outline">Ver todas</a>
+          </div>
+          <div class="card-body flush">
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>#</th><th>Producto</th><th>Cantidad</th><th>Total</th><th>Fecha</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td>#1042</td><td>Cien Años de Soledad</td><td>2</td><td>$56.00</td><td>30 Jun 2026</td><td><span class="badge success">Pagado</span></td></tr>
+                  <tr><td>#1041</td><td>Cuaderno A4 Pasta Dura</td><td>5</td><td>$32.50</td><td>30 Jun 2026</td><td><span class="badge success">Pagado</span></td></tr>
+                  <tr><td>#1040</td><td>El Principito</td><td>1</td><td>$18.00</td><td>29 Jun 2026</td><td><span class="badge warning">Pendiente</span></td></tr>
+                  <tr><td>#1039</td><td>Diccionario Larousse</td><td>1</td><td>$42.00</td><td>29 Jun 2026</td><td><span class="badge success">Pagado</span></td></tr>
+                  <tr><td>#1038</td><td>Lápices 2B (12u)</td><td>3</td><td>$24.00</td><td>28 Jun 2026</td><td><span class="badge success">Pagado</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <h3>Actividad reciente<small>Movimientos del sistema</small></h3>
+          </div>
+          <div class="card-body flush">
+            <div class="activity">
+              <div class="activity-item">
+                <div class="ico v"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+                <div class="text"><strong>Venta registrada #1042</strong><small>Cien Años de Soledad · $56.00</small></div>
+                <span class="time">hace 5m</span>
+              </div>
+              <div class="activity-item">
+                <div class="ico p"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div>
+                <div class="text"><strong>Nuevo producto</strong><small>Agregado: "Rayuela" · Stock 25</small></div>
+                <span class="time">hace 1h</span>
+              </div>
+              <div class="activity-item">
+                <div class="ico s"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4m0 4h.01M10.3 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg></div>
+                <div class="text"><strong>Stock bajo</strong><small>"El Principito" tiene solo 3 unidades</small></div>
+                <span class="time">hace 3h</span>
+              </div>
+              <div class="activity-item">
+                <div class="ico e"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6M9 9l6 6"/></svg></div>
+                <div class="text"><strong>Producto agotado</strong><small>"Atlas Universal" - reabastecer</small></div>
+                <span class="time">hace 6h</span>
+              </div>
+              <div class="activity-item">
+                <div class="ico v"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg></div>
+                <div class="text"><strong>Venta registrada #1041</strong><small>Cuaderno A4 · $32.50</small></div>
+                <span class="time">hace 8h</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- POCO STOCK + AGOTADOS -->
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <h3>Productos con poco stock<small>Reabastecer pronto</small></h3>
+            <a href="productos.html" class="btn btn-sm btn-outline">Ver todos</a>
+          </div>
+          <div class="card-body flush">
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>Producto</th><th>Categoría</th><th>Stock</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td><div class="cell-product"><div class="thumb">EP</div><div><div class="name">El Principito</div><div class="sku">SKU-0034</div></div></div></td><td>Infantil</td><td>3</td><td><span class="badge warning">Stock bajo</span></td></tr>
+                  <tr><td><div class="cell-product"><div class="thumb">RA</div><div><div class="name">Rayuela</div><div class="sku">SKU-0089</div></div></div></td><td>Novelas</td><td>5</td><td><span class="badge warning">Stock bajo</span></td></tr>
+                  <tr><td><div class="cell-product"><div class="thumb">LB</div><div><div class="name">Libreta Pequeña</div><div class="sku">SKU-0122</div></div></div></td><td>Papelería</td><td>7</td><td><span class="badge warning">Stock bajo</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-head">
+            <h3>Productos agotados<small>Sin existencias</small></h3>
+            <a href="productos.html" class="btn btn-sm btn-outline">Reabastecer</a>
+          </div>
+          <div class="card-body flush">
+            <div class="table-wrap">
+              <table class="data">
+                <thead><tr><th>Producto</th><th>Categoría</th><th>Última venta</th><th>Estado</th></tr></thead>
+                <tbody>
+                  <tr><td><div class="cell-product"><div class="thumb">AU</div><div><div class="name">Atlas Universal</div><div class="sku">SKU-0011</div></div></div></td><td>Académicos</td><td>27 Jun</td><td><span class="badge error">Agotado</span></td></tr>
+                  <tr><td><div class="cell-product"><div class="thumb">DC</div><div><div class="name">Don Quijote (Tomo I)</div><div class="sku">SKU-0044</div></div></div></td><td>Novelas</td><td>25 Jun</td><td><span class="badge error">Agotado</span></td></tr>
+                  <tr><td><div class="cell-product"><div class="thumb">MC</div><div><div class="name">Marcadores Permanentes</div><div class="sku">SKU-0220</div></div></div></td><td>Papelería</td><td>22 Jun</td><td><span class="badge error">Agotado</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="admin/js/script.js"></script>
+</body>
+</html>
