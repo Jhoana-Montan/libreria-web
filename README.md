@@ -1,14 +1,18 @@
 # Librería Montan
 
-Sistema web para administración de productos de papelería.
+Sistema web desarrollado en PHP y MySQL.
 
-Tecnologías:
+## Tecnologías
 
-- PHP
-- MySQL
+- PHP 8.2
+- MySQL 8
 - Docker
-- GitHub
+- Docker Compose
 
-Ejecución:
+## Ejecutar
 
-docker compose up -d
+docker compose up --build
+
+Abrir:
+
+http://localhost:8081
